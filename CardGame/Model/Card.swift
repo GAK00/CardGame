@@ -9,13 +9,16 @@
 import UIKit
 class Card
 {
-    private var backImage  : UIImage
+    private var backImage  : UIImage{
+        set{self.backImage = newValue}
+        get{return self.backImage}
+    }
     private var isFaceUp : Bool
     init() {
-        backImage = UIImage()
-        isFaceUp = false
-    }
-    func toString()->String
+        isFaceUp = false;
+        backImage = UIImage()}
+        
+        func toString()->String
     {
         let description = "The Card is \(isFaceUp)"
         return description
