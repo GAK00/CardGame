@@ -10,25 +10,31 @@ import UIKit
 class Card
 {
     private var backImage  : UIImage{
-        set{self.backImage = newValue}
+        set(backImage)
+        {self.backImage = backImage}
         get{return self.backImage}
     }
-    private var isFaceUp : Bool
+    private var isFaceUp : Bool{
+        set(isFaceUp)
+        {self.isFaceUp = isFaceUp}
+        get{return self.isFaceUp}
+
+
+}
     init() {
         isFaceUp = false;
-        backImage = UIImage()}
+        backImage = UIImage()
+    }
         
-        func toString()->String
+    
+    
+    
+    
+    func toString()->String
     {
         let description = "The Card is \(isFaceUp)"
         return description
     }
-    func getBackImage()->UIImage
-    {
-    return backImage
-    }
-    func getIsFaceUp() ->Bool
-    {
-        return isFaceUp
-    }
+   
+
 }
