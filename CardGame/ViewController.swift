@@ -9,10 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var gameCard : PlayingCard{
+        get{return self.gameCard}
+        set(gameCard){
+        self.gameCard = gameCard
+        }
+    }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        gameCard = PlayingCard.init()
+        print(gameCard.toString())
+        
     }
 
     override func didReceiveMemoryWarning() {
