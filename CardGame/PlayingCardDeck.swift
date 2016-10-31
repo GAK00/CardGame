@@ -12,12 +12,14 @@ class PlayingCardDeck : Deck{
 
     override init(){
         super.init()
-        for rank in 1...13
+        for suit in PlayingCard.validSuits()
         {
-            deck.append(PlayingCard(rank: rank, suit: "Spades"))
-            deck.append(PlayingCard(rank: rank, suit: "Clubs"))
-            deck.append(PlayingCard(rank: rank, suit: "Diamonds"))
-            deck.append(PlayingCard(rank: rank, suit: "Hearts"))
+            for var rank = 1; rank < PlayingCard.maxRank(); rank += 1
+            {
+                let currentCard = PlayingCard(rank: rank, suit: suit)
+                self.deck.append(currentCard)
+            }
+            
         }
     }
     

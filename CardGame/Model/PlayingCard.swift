@@ -20,10 +20,10 @@ class PlayingCard : Card
         self.rank = rank
         frontImage = UIImage(named: "cardFront")!
         self.suit = suit
-        if(suit == "Hearts"||suit == "Diamonds"){
+        if(suit == "❤️"||suit == "♦️"){
             self.color = UIColor.redColor()
         }
-        else if(suit == "Clubs"||suit=="Spades"){
+        else if(suit == "♣️"||suit=="♠️"){
             self.color = UIColor.blackColor()
         }
         else{
@@ -50,6 +50,10 @@ class PlayingCard : Card
     }
     class func validSuits() ->[String]{
     return["❤️","♠️","♦️","♣️"]
+    }
+    class func maxRank() -> Int{
+        return cardRanks().count-1
+    
     }
     
 }
