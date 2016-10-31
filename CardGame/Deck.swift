@@ -7,3 +7,12 @@
 //
 
 import Foundation
+class Deck{
+    var deck = [Card]()
+    init(){}
+    func getDeck() -> Array<Card>
+    {
+    return(deck)
+    }
+}
+

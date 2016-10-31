@@ -14,12 +14,15 @@ class PlayingCard : Card
     private var suit : String
     private var color : UIColor
     private var frontImage : UIImage
-    override init(rank: Int,suit: Sting){
-        rank = 0
+   
+     init( rank: Int,suit: String){
+        
+        self.rank = rank
         frontImage = UIImage()
         color = UIColor()
-        suit = String()
+        self.suit = suit
         super.init()
+        
        
     }
     override func toString() -> String {
