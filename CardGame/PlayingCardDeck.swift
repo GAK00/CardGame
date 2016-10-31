@@ -22,13 +22,15 @@ class PlayingCardDeck : Deck{
     }
     
     func suffleDeck(){
-        var tempDeck : Array<PlayingCard>
-        for pos in 1...52
+        var tempDeck = [Card]()
+        for _ in 1...52
         {
-            let cardIndex =
-            tempDeck.removeAtIndex(<#T##index: Int##Int#>)
+            let cardIndex = Int(arc4random_uniform(UInt32(deck.count)))
+            let card = deck.removeAtIndex(cardIndex)
+            tempDeck.append(card)
         
         }
+        deck = tempDeck
     }
     func orderDeck(){}
 }

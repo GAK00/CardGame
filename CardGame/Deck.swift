@@ -8,7 +8,7 @@
 
 import Foundation
 class Deck{
-    var deck = [Card]()
+   lazy var deck = [Card]()
     init(){}
     func getDeck() -> Array<Card>
     {
