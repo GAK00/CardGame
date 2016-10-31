@@ -10,10 +10,10 @@ import UIKit
 
 class PlayingCard : Card
 {
-    private var rank : Int
-    private var suit : String
-    private var color : UIColor
-    private var frontImage : UIImage
+    internal var rank : Int
+    internal var suit : String
+    internal var color : UIColor
+    internal var frontImage : UIImage
    
      init( rank: Int,suit: String){
         
