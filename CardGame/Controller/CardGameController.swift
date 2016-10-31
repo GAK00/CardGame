@@ -9,4 +9,15 @@
 import UIKit
 
 class CardGameController : UIViewController{
+    
+    private let gameCard : PlayingCard = PlayingCard.init()
+
+  
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(gameCard.toString())
+        
+    }
 }
