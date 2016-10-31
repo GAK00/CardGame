@@ -19,8 +19,16 @@ class PlayingCard : Card
         
         self.rank = rank
         frontImage = UIImage(named: "cardFront")!
-        color = UIColor()
         self.suit = suit
+        if(suit == "Hearts"||suit == "Diamonds"){
+            self.color = UIColor.redColor()
+        }
+        else if(suit == "Clubs"||suit=="Spades"){
+            self.color = UIColor.blackColor()
+        }
+        else{
+            self.color = UIColor.greenColor()
+        }
         super.init()
         
        
