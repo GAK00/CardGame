@@ -18,7 +18,7 @@ class PlayingCard : Card
      init( rank: Int,suit: String){
         
         self.rank = rank
-        frontImage = UIImage()
+        frontImage = UIImage(named: "cardFront")!
         color = UIColor()
         self.suit = suit
         super.init()
