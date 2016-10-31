@@ -42,5 +42,14 @@ class PlayingCard : Card
         let description = "This PlayingCard has a face value of \(rank), a color of \(color), is of the \(suit) suit and, The card is facing" + facing
         return description
     }
+    //class modifier puts func outside method a if static
+    
+    class func cardRanks()->[String]
+    {
+        return["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+    }
+    class func validSuits() ->[String]{
+    return["❤️","♠️","♦️","♣️"]
+    }
     
 }
