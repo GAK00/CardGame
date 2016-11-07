@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Card Game Controller-->
@@ -16,11 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc6-Q5-Qf6">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="10" width="307" height="38"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBa-Ad-zTo">
+                                <rect key="frame" x="143" y="90" width="314" height="419"/>
+                                <state key="normal" title="Card" backgroundImage="cardBack"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="91" y="74" width="218" height="451"/>
+                                </variation>
+                                <connections>
+                                    <action selector="Flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8le-Jm-Uli"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHQ-pZ-nzs" userLabel="Counter">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="179" y="559" width="42" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="top" secondItem="Lc6-Q5-Qf6" secondAttribute="bottom" id="4XJ-Eq-J3x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QBa-Ad-zTo" secondAttribute="trailing" constant="19" id="7u7-ds-YjP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="91" id="HN2-r6-eDF"/>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q8W-ZG-k3J"/>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="SRo-ZF-Eh7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QBa-Ad-zTo" secondAttribute="trailing" constant="123" id="VhA-md-Apm"/>
+                            <constraint firstItem="NHQ-pZ-nzs" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="8" id="ZOR-v2-U1G"/>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fUR-h2-Ya4"/>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="fbf-gT-59g"/>
+                            <constraint firstItem="Lc6-Q5-Qf6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="jug-1J-Udq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="49" id="sYo-tH-ICg"/>
+                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="top" secondItem="Lc6-Q5-Qf6" secondAttribute="bottom" constant="69" id="xRd-9k-3vC"/>
+                            <constraint firstItem="NHQ-pZ-nzs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyh-TH-BEJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NHQ-pZ-nzs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="jug-1J-Udq"/>
+                                <exclude reference="4XJ-Eq-J3x"/>
+                                <exclude reference="7u7-ds-YjP"/>
+                                <exclude reference="fbf-gT-59g"/>
+                                <exclude reference="ZOR-v2-U1G"/>
+                                <exclude reference="yyh-TH-BEJ"/>
+                                <exclude reference="sYo-tH-ICg"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NHQ-pZ-nzs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="jug-1J-Udq"/>
+                                <include reference="4XJ-Eq-J3x"/>
+                                <include reference="7u7-ds-YjP"/>
+                                <include reference="fbf-gT-59g"/>
+                                <include reference="ZOR-v2-U1G"/>
+                                <include reference="yyh-TH-BEJ"/>
+                                <include reference="sYo-tH-ICg"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="Counter" destination="NHQ-pZ-nzs" id="RTw-aS-kQo"/>
+                        <outlet property="Flip" destination="QBa-Ad-zTo" id="6fw-kt-aUH"/>
+                        <outlet property="Label" destination="Lc6-Q5-Qf6" id="D69-dt-OUJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="241.5" y="571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cardBack" width="70" height="99"/>
+    </resources>
 </document>

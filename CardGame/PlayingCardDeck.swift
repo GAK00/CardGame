@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlayingCardDeck : Deck{
+public class PlayingCardDeck : Deck{
 
     override init(){
         super.init()
@@ -22,17 +22,5 @@ class PlayingCardDeck : Deck{
             
         }
     }
-    
-    func suffleDeck(){
-        var tempDeck = [Card]()
-        for _ in 1...52
-        {
-            let cardIndex = Int(arc4random_uniform(UInt32(deck.count)))
-            let card = deck.removeAtIndex(cardIndex)
-            tempDeck.append(card)
-        
-        }
-        deck = tempDeck
-    }
-    func orderDeck(){}
 }
+
