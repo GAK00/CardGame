@@ -14,7 +14,7 @@ public class PlayingCardDeck : Deck{
         super.init()
         for suit in PlayingCard.validSuits()
         {
-            for var rank = 1; rank < PlayingCard.maxRank(); rank += 1
+            for var rank = 1; rank <= PlayingCard.maxRank(); rank += 1
             {
                 let currentCard = PlayingCard(rank: rank, suit: suit)
                 self.deck.append(currentCard)

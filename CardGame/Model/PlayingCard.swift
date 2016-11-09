@@ -42,6 +42,18 @@ class PlayingCard : Card
         let description = "This PlayingCard has a face value of \(rank), a color of \(color), is of the \(suit) suit and, The card is facing" + facing
         return description
     }
+    
+    func getColor() ->UIColor
+    {
+        return color
+    }
+    
+    func getCardData() ->String
+    {
+        let data = "\(PlayingCard.cardRanks()[rank])\(suit)"
+        return data
+    
+    }
     //class modifier puts func outside method a if static
     
     class func cardRanks()->[String]

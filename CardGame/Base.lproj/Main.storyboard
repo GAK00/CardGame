@@ -18,15 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc6-Q5-Qf6">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="10" width="307" height="38"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBa-Ad-zTo">
                                 <rect key="frame" x="143" y="90" width="314" height="419"/>
                                 <state key="normal" title="Card" backgroundImage="cardBack"/>
@@ -42,14 +33,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="179" y="559" width="42" height="21"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Enm-7l-7os" userLabel="DeckCut">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cut Deck"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="219" y="533" width="73" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="DeckCut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqP-sg-RFq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfM-bO-1dp" userLabel="Shuffle">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Shuffle"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="113" y="533" width="57" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="ShuffleDeck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MsI-kt-kbr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="top" secondItem="Lc6-Q5-Qf6" secondAttribute="bottom" id="4XJ-Eq-J3x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QBa-Ad-zTo" secondAttribute="trailing" constant="19" id="7u7-ds-YjP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="91" id="HN2-r6-eDF"/>
                             <constraint firstItem="QBa-Ad-zTo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q8W-ZG-k3J"/>
@@ -58,18 +65,16 @@
                             <constraint firstItem="NHQ-pZ-nzs" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="8" id="ZOR-v2-U1G"/>
                             <constraint firstItem="QBa-Ad-zTo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fUR-h2-Ya4"/>
                             <constraint firstItem="QBa-Ad-zTo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="fbf-gT-59g"/>
-                            <constraint firstItem="Lc6-Q5-Qf6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="jug-1J-Udq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBa-Ad-zTo" secondAttribute="bottom" constant="49" id="sYo-tH-ICg"/>
-                            <constraint firstItem="QBa-Ad-zTo" firstAttribute="top" secondItem="Lc6-Q5-Qf6" secondAttribute="bottom" constant="69" id="xRd-9k-3vC"/>
                             <constraint firstItem="NHQ-pZ-nzs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyh-TH-BEJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="NHQ-pZ-nzs"/>
+                                <exclude reference="Enm-7l-7os"/>
+                                <exclude reference="NfM-bO-1dp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jug-1J-Udq"/>
-                                <exclude reference="4XJ-Eq-J3x"/>
                                 <exclude reference="7u7-ds-YjP"/>
                                 <exclude reference="fbf-gT-59g"/>
                                 <exclude reference="ZOR-v2-U1G"/>
@@ -80,10 +85,10 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="NHQ-pZ-nzs"/>
+                                <include reference="Enm-7l-7os"/>
+                                <include reference="NfM-bO-1dp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jug-1J-Udq"/>
-                                <include reference="4XJ-Eq-J3x"/>
                                 <include reference="7u7-ds-YjP"/>
                                 <include reference="fbf-gT-59g"/>
                                 <include reference="ZOR-v2-U1G"/>
@@ -95,7 +100,6 @@
                     <connections>
                         <outlet property="Counter" destination="NHQ-pZ-nzs" id="RTw-aS-kQo"/>
                         <outlet property="Flip" destination="QBa-Ad-zTo" id="6fw-kt-aUH"/>
-                        <outlet property="Label" destination="Lc6-Q5-Qf6" id="D69-dt-OUJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
