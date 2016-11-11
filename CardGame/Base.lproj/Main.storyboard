@@ -75,10 +75,10 @@
                                 <exclude reference="NfM-bO-1dp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7u7-ds-YjP"/>
-                                <exclude reference="fbf-gT-59g"/>
                                 <exclude reference="ZOR-v2-U1G"/>
                                 <exclude reference="yyh-TH-BEJ"/>
+                                <exclude reference="7u7-ds-YjP"/>
+                                <exclude reference="fbf-gT-59g"/>
                                 <exclude reference="sYo-tH-ICg"/>
                             </mask>
                         </variation>
@@ -89,10 +89,10 @@
                                 <include reference="NfM-bO-1dp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7u7-ds-YjP"/>
-                                <include reference="fbf-gT-59g"/>
                                 <include reference="ZOR-v2-U1G"/>
                                 <include reference="yyh-TH-BEJ"/>
+                                <include reference="7u7-ds-YjP"/>
+                                <include reference="fbf-gT-59g"/>
                                 <include reference="sYo-tH-ICg"/>
                             </mask>
                         </variation>
