@@ -14,6 +14,16 @@ class PlayingCard : Card
     internal var suit : String
     internal var color : UIColor
     internal var frontImage : UIImage
+    
+    
+    override init()
+    {
+        self.rank = 0
+        frontImage = UIImage()
+        suit = ""
+        color = UIColor()
+        super.init()
+    }
    
      init( rank: Int,suit: String){
         

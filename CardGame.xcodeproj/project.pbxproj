@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D3232FCC1DC7884F0013BD6B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3232FCB1DC7884F0013BD6B /* Deck.swift */; };
 		D3232FCE1DC78B7E0013BD6B /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3232FCD1DC78B7E0013BD6B /* PlayingCardDeck.swift */; };
+		D3B6B64B1DD61E9F00DC07BD /* StupidGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6B64A1DD61E9F00DC07BD /* StupidGame.swift */; };
 		D3D8D3E91DBFAD8F00BB2FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8D3E81DBFAD8F00BB2FAC /* AppDelegate.swift */; };
 		D3D8D3EE1DBFAD8F00BB2FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D8D3EC1DBFAD8F00BB2FAC /* Main.storyboard */; };
 		D3D8D3F01DBFAD8F00BB2FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D8D3EF1DBFAD8F00BB2FAC /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		D3232FCB1DC7884F0013BD6B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		D3232FCD1DC78B7E0013BD6B /* PlayingCardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		D3B6B64A1DD61E9F00DC07BD /* StupidGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StupidGame.swift; sourceTree = "<group>"; };
 		D3D8D3E51DBFAD8F00BB2FAC /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D8D3E81DBFAD8F00BB2FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D8D3ED1DBFAD8F00BB2FAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D3DBC1831DC251CC002E9D2C /* CardGameController.swift */,
+				D3B6B64A1DD61E9F00DC07BD /* StupidGame.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				D3D8D3FB1DBFAE4200BB2FAC /* Card.swift in Sources */,
 				D3232FCC1DC7884F0013BD6B /* Deck.swift in Sources */,
 				D3232FCE1DC78B7E0013BD6B /* PlayingCardDeck.swift in Sources */,
+				D3B6B64B1DD61E9F00DC07BD /* StupidGame.swift in Sources */,
 				D3D8D3FD1DBFAE6700BB2FAC /* PlayingCard.swift in Sources */,
 				D3D8D3E91DBFAD8F00BB2FAC /* AppDelegate.swift in Sources */,
 			);
