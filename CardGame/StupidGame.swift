@@ -27,30 +27,40 @@ class StupidGame {
         {
             if(buttonClicked)
             {
-                if let playingCard1 = (deck.drawCard() as? PlayingCard)
-                {
-                    if let playingCard2 = (deck.drawCard() as? PlayingCard)
-                    {
-                        if(playingCard1.rank == playingCard2.rank && playingCard1.color == playingCard2.color)
-                        {
-                            win()
-                        }
-                    }
-                    else
-                    {
-                        lose()
-                    }
-                }
-                else
-                {
-                    lose()
-                }
-                
+                buttonClicked = false;
+                let draw: PlayingCardDeck
+                draw = PlayingCardDeck()
+                draw.deck.removeAll()
+                draw.deck.append(deck.deck[0])
+                draw.deck.append(deck.deck[1])
+              checkCards(draw)
             }
             
         }
     }
     func win(){}
     func lose(){}
+    func checkCards(draw : PlayingCardDeck)
+    {
+        var trueHand=[PlayingCard]()
+        for _ in(0...draw.deck.count){
+        let Card = draw.drawCard()
+        if(Card != nil){}
+        let currentCard : PlayingCard = (Card as? PlayingCard)!
+            trueHand.append(currentCard)}
+        if(trueHand.count == 2)
+        {
+        }
+    }
+    func doCardsMatch(hand : [PlayingCard]) -> Bool
+    {
+        var match : Bool
+        match = false
+        if(hand[0].rank == hand[0].rank && hand[1].color == hand[1].color)
+        {
+            match = true
+        }
+        return match
+    }
 
 }
