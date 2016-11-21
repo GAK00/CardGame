@@ -9,17 +9,13 @@
 import UIKit
 class Card
 {
-    internal var backImage  : UIImage
     
     internal var isFaceUp : Bool
     init() {
-        backImage = UIImage(named:"cardBack")!
 
         isFaceUp = false
             }
         
-    
-    
     
     
     func toString()->String

@@ -13,13 +13,11 @@ class PlayingCard : Card
     internal var rank : Int
     internal var suit : String
     internal var color : UIColor
-    internal var frontImage : UIImage
     
     
     override init()
     {
         self.rank = 0
-        frontImage = UIImage()
         suit = ""
         color = UIColor()
         super.init()
@@ -28,7 +26,6 @@ class PlayingCard : Card
      init( rank: Int,suit: String){
         
         self.rank = rank
-        frontImage = UIImage(named: "cardFront")!
         self.suit = suit
         if(suit == "❤️"||suit == "♦️"){
             self.color = UIColor.redColor()
