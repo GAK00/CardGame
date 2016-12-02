@@ -8,59 +8,109 @@
 
 import UIKit
 class StupidGame {
-    internal var deck : PlayingCardDeck
-    internal var hasEnded : Bool
-    internal var buttonClicked : Bool
+    private var deck : PlayingCardDeck
+    private var hasEnded : Bool
+    private var hand : [PlayingCard]
+    private var state : String
     
     
     init()
     {
         deck = PlayingCardDeck()
         hasEnded = false
-        buttonClicked = false
+        hand = [PlayingCard]()
+        state = "Error"
     }
     
     func startGame()
     {
         deck.suffleDeck()
-        while(!hasEnded)
-        {
-            if(buttonClicked)
+        playGame()
+   
+    }
+    
+    private func playGame()
+    {
+            if(!hasEnded)
             {
-                buttonClicked = false;
-                let draw: PlayingCardDeck
-                draw = PlayingCardDeck()
-                draw.deck.removeAll()
-                draw.deck.append(deck.deck[0])
-                draw.deck.append(deck.deck[1])
-              checkCards(draw)
+                var draw: [Card?] = [Card?]()
+                draw.append(deck.drawCard())
+                draw.append(deck.drawCard())
+                checkCards(draw)
             }
             
-        }
+        
     }
-    func win(){}
-    func lose(){}
-    func checkCards(draw : PlayingCardDeck)
+    private func win()
     {
-        var trueHand=[PlayingCard]()
-        for _ in(0...draw.deck.count){
-        let Card = draw.drawCard()
-        if(Card != nil){}
+        hasEnded = true
+        state = "Win"
+    }
+    private func lose()
+    {
+        hasEnded = true
+        state = "Lose"
+    }
+    private func checkCards(draw : [Card?])
+    {
+        hand.removeAll()
+        for pos in(0...draw.count-1){
+            if(!(draw[pos]==nil)){
+        let Card = draw[pos]
+            if(Card != nil){
         let currentCard : PlayingCard = (Card as? PlayingCard)!
-            trueHand.append(currentCard)}
-        if(trueHand.count == 2)
+                hand.append(currentCard)}}}
+        print ("\(hand.count)")
+        if(hand.count == 2)
         {
+            
+            
+            print(doCardsMatch(hand))
+            if(doCardsMatch(hand))
+            {
+                win()
+            }
+        }
+        else
+        {
+            lose()
         }
     }
-    func doCardsMatch(hand : [PlayingCard]) -> Bool
-    {
+   private func doCardsMatch(hand : [PlayingCard]) -> Bool
+   {
         var match : Bool
         match = false
-        if(hand[0].rank == hand[0].rank && hand[1].color == hand[1].color)
+        if(hand[0].rank == hand[1].rank && hand[0].color == hand[1].color)
         {
             match = true
         }
         return match
+    }
+    
+    func isGamePlaying() -> Bool
+    {
+        return hasEnded
+    }
+    func buttonPressed()
+    {
+        playGame()
+    }
+    func getHand() -> [PlayingCard]
+    {
+        return hand
+    }
+    
+    func getWinOrLose()->String
+    {
+        return state
+    }
+    func shuffleGameDeck()
+    {
+        deck.suffleDeck()
+    }
+    func cutGameDeck()
+    {
+        deck.cutDeck()
     }
 
 }

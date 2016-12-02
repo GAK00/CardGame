@@ -25,6 +25,7 @@ class CardView
         topLablel = UILabel()
         bottomLabel = UILabel()
         cardCurve = CGFloat(20.00)
+        
         setup()
     }
     
