@@ -12,24 +12,37 @@ class CardGameController : UIViewController{
     private lazy var deck:PlayingCardDeck = PlayingCardDeck()
     private lazy var clickCount = Int()
    private lazy var game : StupidGame = StupidGame()
+    private lazy var wins = Int()
+    private lazy var losses = Int()
     
 
     @IBOutlet weak var Counter: UILabel!
     
+
+    @IBOutlet weak var Wins: UILabel!
+    @IBOutlet weak var Losses: UILabel!
     @IBOutlet weak var Flip: UIButton!
     
     @IBOutlet weak var Flip2: UIButton!
     
     override func viewDidLoad() {
+        wins = 0
+        losses = 0
+        Wins.text = "Wins: \(wins)"
+        Losses.text = "Losses: \(losses)"
         game.startGame()
         super.viewDidLoad()
         }
+    @IBOutlet weak var resetButton: UIButton!
     @IBAction func Flip(sender: UIButton)
     {
         game.buttonPressed()
 
-        if(game.isGamePlaying())
+        if(game.isGameOver())
         {
+            print(resetButton.hidden)
+            resetButton.hidden = false
+            print(resetButton.hidden)
             if(game.getWinOrLose()=="Win")
             {
                 Flip.setTitleColor(game.getHand()[0].color, forState: .Normal)
@@ -54,6 +67,16 @@ class CardGameController : UIViewController{
         game.shuffleGameDeck()
     }
     
+    @IBAction func Reset(sender: UIButton)
+    {
+        resetButton.hidden = true
+        Counter.text = ""
+        Flip.setTitle("", forState: UIControlState.Normal)
+        Flip2.setTitle("", forState: UIControlState.Normal)
+        game = StupidGame()
+        game.startGame()
+        
+    }
     private func flip()
     {
         clickCount += 1

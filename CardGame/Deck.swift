@@ -15,6 +15,7 @@ public class Deck{
     return(deck)
     }
     public func suffleDeck(){
+        if(deck.count >= 2){
         var tempDeck = [Card]()
         if(deck.count != 1){
         for _ in 1...deck.count
@@ -24,7 +25,7 @@ public class Deck{
             tempDeck.append(card)
             
         }
-            deck = tempDeck}
+            deck = tempDeck}}
     }
     public func orderDeck(){}
     

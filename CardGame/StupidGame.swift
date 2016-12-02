@@ -87,7 +87,7 @@ class StupidGame {
         return match
     }
     
-    func isGamePlaying() -> Bool
+    func isGameOver() -> Bool
     {
         return hasEnded
     }
