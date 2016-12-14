@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class PlayingCardDeck : Deck{
+open class PlayingCardDeck : Deck{
 
     override init(){
         super.init()
         for suit in PlayingCard.validSuits()
         {
-            for var rank = 1; rank <= PlayingCard.maxRank(); rank += 1
+            for rank in 1...PlayingCard.maxRank()
             {
                 let currentCard = PlayingCard(rank: rank, suit: suit)
                 self.deck.append(currentCard)
@@ -23,17 +23,17 @@ public class PlayingCardDeck : Deck{
         }
     }
     
-    override public func orderDeck() {
+    override open func orderDeck() {
         var temp = [PlayingCard]()
         for suit in PlayingCard.validSuits()
         {
-            for var rank = 1; rank <= PlayingCard.maxRank(); rank += 1
+             for rank in 1...PlayingCard.maxRank()
             {
-                let index = deck.indexOf(
-                    {
+                let index = deck.index(
+                    where: {
                         ($0 as! PlayingCard).suit == suit && ($0 as! PlayingCard).rank == rank
                     })
-                let tempCard = deck.removeAtIndex(index!)as!PlayingCard
+                let tempCard = deck.remove(at: index!)as!PlayingCard
                 temp.append(tempCard)
             }
         }

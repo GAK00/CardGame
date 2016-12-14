@@ -9,11 +9,11 @@
 import UIKit
 
 class CardGameController : UIViewController{
-    private lazy var deck:PlayingCardDeck = PlayingCardDeck()
-    private lazy var clickCount = Int()
-   private lazy var game : StupidGame = StupidGame()
-    private lazy var wins = Int()
-    private lazy var losses = Int()
+    fileprivate lazy var deck:PlayingCardDeck = PlayingCardDeck()
+    fileprivate lazy var clickCount = Int()
+   fileprivate lazy var game : StupidGame = StupidGame()
+    fileprivate lazy var wins = Int()
+    fileprivate lazy var losses = Int()
     
 
     @IBOutlet weak var Counter: UILabel!
@@ -34,45 +34,58 @@ class CardGameController : UIViewController{
         super.viewDidLoad()
         }
     @IBOutlet weak var resetButton: UIButton!
-    @IBAction func Flip(sender: UIButton)
+    @IBAction func Flip(_ sender: UIButton)
     {
         game.buttonPressed()
 
         if(game.isGameOver())
         {
-            print(resetButton.hidden)
-            resetButton.hidden = false
-            print(resetButton.hidden)
+            resetButton.isHidden = false
             if(game.getWinOrLose()=="Win")
             {
-                Flip.setTitleColor(game.getHand()[0].color, forState: .Normal)
-                Flip.setTitle("\(game.getHand()[0].getCardData())",forState: .Normal)
-                Flip2.setTitleColor(game.getHand()[1].color, forState: .Normal)
-                Flip2.setTitle("\(game.getHand()[1].getCardData())",forState: .Normal)
+               
+                Flip.setTitleColor(game.getHand()[0].color, for: UIControlState())
+                Flip.setTitle("\(game.getHand()[0].getCardData())",for: UIControlState())
+                Flip2.setTitleColor(game.getHand()[1].color, for: UIControlState())
+                Flip2.setTitle("\(game.getHand()[1].getCardData())",for: UIControlState())
             }
+
+           /// }
             Counter.text = game.getWinOrLose()
         }
         else{
-        Flip.setTitleColor(game.getHand()[0].color, forState: .Normal)
-        Flip.setTitle("\(game.getHand()[0].getCardData())",forState: .Normal)
-        Flip2.setTitleColor(game.getHand()[1].color, forState: .Normal)
-            Flip2.setTitle("\(game.getHand()[1].getCardData())",forState: .Normal)}
+        Flip.setTitleColor(game.getHand()[0].color, for: UIControlState())
+        Flip.setTitle("\(game.getHand()[0].getCardData())",for: UIControlState())
+        Flip2.setTitleColor(game.getHand()[1].color, for: UIControlState())
+            Flip2.setTitle("\(game.getHand()[1].getCardData())",for: UIControlState())}
         
     }
         
-    @IBAction func DeckCut(sender: UIButton) {
+    @IBAction func DeckCut(_ sender: UIButton) {
         game.cutGameDeck()
     }
-    @IBAction func ShuffleDeck(sender: UIButton) {
+    @IBAction func ShuffleDeck(_ sender: UIButton) {
         game.shuffleGameDeck()
     }
     
-    @IBAction func Reset(sender: UIButton)
+    @IBAction func Reset(_ sender: UIButton)
     {
-        resetButton.hidden = true
+        if(game.getWinOrLose()=="Win")
+        {
+            wins += 1
+            Wins.text = "Wins: \(wins)"
+            print(wins)
+        }
+        else
+        {
+            losses += 1
+            print(losses)
+            Losses.text = "Losses: \(losses)"
+        }
+        resetButton.isHidden = true
         Counter.text = ""
-        Flip.setTitle("", forState: UIControlState.Normal)
-        Flip2.setTitle("", forState: UIControlState.Normal)
+        Flip.setTitle("", for: UIControlState())
+        Flip2.setTitle("", for: UIControlState())
         game = StupidGame()
         game.startGame()
         
@@ -81,12 +94,12 @@ class CardGameController : UIViewController{
     {
         clickCount += 1
         if let currentCard = deck.drawCard() as? PlayingCard{
-            Flip.setTitleColor(currentCard.color, forState: .Normal)
-            Flip.setTitle("\(currentCard.getCardData())",forState: .Normal)
+            Flip.setTitleColor(currentCard.color, for: UIControlState())
+            Flip.setTitle("\(currentCard.getCardData())",for: UIControlState())
             Counter.text = "The card has been clicked \(clickCount) Times"
         }
             
-        else{Flip.setTitle("",forState: .Normal)
+        else{Flip.setTitle("",for: UIControlState())
             Counter.text = "The deck is out of cards - Reinitializing"
             deck = PlayingCardDeck.init()}
     }

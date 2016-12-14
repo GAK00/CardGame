@@ -7,29 +7,29 @@
 //
 
 import Foundation
-public class Deck{
+open class Deck{
    lazy var deck = [Card]()
     init(){}
     func getDeck() -> Array<Card>
     {
     return(deck)
     }
-    public func suffleDeck(){
+    open func suffleDeck(){
         if(deck.count >= 2){
         var tempDeck = [Card]()
         if(deck.count != 1){
         for _ in 1...deck.count
         {
             let cardIndex = Int(arc4random_uniform(UInt32(deck.count)))
-            let card = deck.removeAtIndex(cardIndex)
+            let card = deck.remove(at: cardIndex)
             tempDeck.append(card)
             
         }
             deck = tempDeck}}
     }
-    public func orderDeck(){}
+    open func orderDeck(){}
     
-    public func cutDeck(){
+    open func cutDeck(){
         let cardIndex:Int = deck.count/2
         var tempDeck = deck
         if(cardIndex-1 <= 0){}
@@ -46,13 +46,13 @@ public class Deck{
     func drawCard()->Card?
     {if self.deck.count>0
     {
-        return self.deck.removeAtIndex(0)}
+        return self.deck.remove(at: 0)}
     else{return nil}
     }
     func drawRandomCard()->Card?
     {
         if(self.deck.count>0){
-            return deck.removeAtIndex(Int(arc4random_uniform(UInt32(deck.count))))}
+            return deck.remove(at: Int(arc4random_uniform(UInt32(deck.count))))}
         else{return nil}}
 }
 

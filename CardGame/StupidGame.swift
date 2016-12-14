@@ -8,10 +8,10 @@
 
 import UIKit
 class StupidGame {
-    private var deck : PlayingCardDeck
-    private var hasEnded : Bool
-    private var hand : [PlayingCard]
-    private var state : String
+    fileprivate var deck : PlayingCardDeck
+    fileprivate var hasEnded : Bool
+    fileprivate var hand : [PlayingCard]
+    fileprivate var state : String
     
     
     init()
@@ -29,7 +29,7 @@ class StupidGame {
    
     }
     
-    private func playGame()
+    fileprivate func playGame()
     {
             if(!hasEnded)
             {
@@ -41,17 +41,17 @@ class StupidGame {
             
         
     }
-    private func win()
+    fileprivate func win()
     {
         hasEnded = true
         state = "Win"
     }
-    private func lose()
+    fileprivate func lose()
     {
         hasEnded = true
         state = "Lose"
     }
-    private func checkCards(draw : [Card?])
+    fileprivate func checkCards(_ draw : [Card?])
     {
         hand.removeAll()
         for pos in(0...draw.count-1){
@@ -60,12 +60,8 @@ class StupidGame {
             if(Card != nil){
         let currentCard : PlayingCard = (Card as? PlayingCard)!
                 hand.append(currentCard)}}}
-        print ("\(hand.count)")
         if(hand.count == 2)
         {
-            
-            
-            print(doCardsMatch(hand))
             if(doCardsMatch(hand))
             {
                 win()
@@ -76,7 +72,7 @@ class StupidGame {
             lose()
         }
     }
-   private func doCardsMatch(hand : [PlayingCard]) -> Bool
+   fileprivate func doCardsMatch(_ hand : [PlayingCard]) -> Bool
    {
         var match : Bool
         match = false

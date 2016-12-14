@@ -28,13 +28,13 @@ class PlayingCard : Card
         self.rank = rank
         self.suit = suit
         if(suit == "❤️"||suit == "♦️"){
-            self.color = UIColor.redColor()
+            self.color = UIColor.red
         }
         else if(suit == "♣️"||suit=="♠️"){
-            self.color = UIColor.blackColor()
+            self.color = UIColor.black
         }
         else{
-            self.color = UIColor.greenColor()
+            self.color = UIColor.green
         }
         super.init()
         
